@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors()); 
  
 // Conectar a MongoDB 
-mongoose.connect(procces.env.MONGODB_URI,
+mongoose.connect(process.env.MONGODB_URI,
     { useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=> console.log("Conexión a MongoDB exitosa")) 
     .catch(err => console.error("Error al conectar a MongoDB", err));
@@ -32,4 +32,5 @@ app.use('/api/pacientes', pacientesRoutes);
 const port = process.env.PORT || 5000; 
 app.listen(port, () => { 
     console.log(`Servidor ejecutándose en el puerto ${port}`); 
+
 });
